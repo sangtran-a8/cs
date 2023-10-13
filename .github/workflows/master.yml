@@ -14,5 +14,13 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Welcome
-        run: echo Hello World
+      - name: Install dependencies
+        run: yarn install
+      - name: Build the library
+        run: yarn build
+      - name: Deploy docs to gh-pages branch
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          yarn ci:docs -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

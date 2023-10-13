@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "compile": "hardhat compile",
-    "build": "yarn clean && hardhat compile && tsc",
-    "ci:docs": "typedoc --excludePrivate --excludeProtected ./index.ts",
+    "build": "hardhat compile && tsc",
+    "docs": "typedoc --excludePrivate --excludeProtected ./index.ts",
+    "ci:docs": "yarn docs && gh-pages -d docs",
     "test": "yarn build && hardhat test",
     "test:watch": "nodemon --watch test --watch src --ext ts --exec 'yarn test' --signal SIGTERM",
     "clean": "rimraf ./dist ./docs"
@@ -30,6 +31,7 @@
     "@types/node": "^20.5.7",
     "chai": "^4.2.0",
     "dotenv": "^16.3.1",
+    "gh-pages": "^6.0.0",
     "hardhat": "^2.17.3",
     "hardhat-abi-exporter": "^2.10.1",
     "hardhat-gas-reporter": "^1.0.8",
