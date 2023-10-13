@@ -1,5 +1,5 @@
 {
-  "name": "cs01",
+  "name": "cs01-t-s",
   "version": "1.0.0",
   "description": "CS01: Blockchain Development on Ethereum with Solidity and Hardhat",
   "main": "dist/index.js",
