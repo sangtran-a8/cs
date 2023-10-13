@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "hardhat compile",
     "build": "yarn clean && hardhat compile && tsc",
-    "ci:docs": "typedoc --excludePrivate --excludeProtected ./src/index.ts",
+    "ci:docs": "typedoc --excludePrivate --excludeProtected ./index.ts",
     "test": "yarn build && hardhat test",
     "test:watch": "nodemon --watch test --watch src --ext ts --exec 'yarn test' --signal SIGTERM",
     "clean": "rimraf ./dist ./docs"
@@ -29,14 +29,16 @@
     "@types/mocha": ">=9.1.0",
     "@types/node": "^20.5.7",
     "chai": "^4.2.0",
+    "dotenv": "^16.3.1",
     "hardhat": "^2.17.3",
+    "hardhat-abi-exporter": "^2.10.1",
     "hardhat-gas-reporter": "^1.0.8",
     "nodemon": "^3.0.1",
     "rimraf": "^5.0.5",
     "solidity-coverage": "^0.8.1",
     "ts-node": "^10.9.1",
     "typechain": "^8.2.0",
-    "typedoc": "^0.25.1",
+    "typedoc": "^0.25.2",
     "typescript": "^5.2.2"
   }
 }
